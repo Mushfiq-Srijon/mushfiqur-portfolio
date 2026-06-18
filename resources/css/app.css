@@ -21,6 +21,10 @@
     --color-mint: #34d399;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--color-canvas);
     color: var(--color-ink);

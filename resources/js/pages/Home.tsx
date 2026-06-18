@@ -4,10 +4,15 @@ import CircuitBackground from '@/Components/CircuitBackground';
 import Navbar from '@/Components/Navbar';
 import HeroPhoto from '@/Components/HeroPhoto';
 import { GithubIcon, LinkedinIcon } from '@/Components/Icons';
+import About from '@/Components/About';
+import Skills from '@/Components/Skills';
+import Projects from '@/Components/Projects';
+import Contact from '@/Components/Contact';
+import Footer from '@/Components/Footer';
 
 export default function Home() {
     return (
-        <div className="relative min-h-screen bg-canvas overflow-hidden">
+        <div className="relative">
             <Navbar />
             <CircuitBackground />
 
@@ -60,6 +65,11 @@ export default function Home() {
 
                 </div>
             </section>
+            <About />
+            <Skills />
+            <Projects />
+            <Contact />
+            <Footer />
         </div>
     );
 }

@@ -2,7 +2,7 @@ import { GearIcon, ResistorIcon, ChipIcon, BracketIcon } from './EngineeringIcon
 
 export default function CircuitBackground() {
     return (
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10 bg-canvas">
             <div className="absolute inset-0 bg-engineering-wash" />
             <div className="absolute inset-0 bg-blueprint-dots opacity-60" />
             <GearIcon className="absolute top-28 right-12 w-11 h-11 text-circuit/35" style={{ animation: 'spin-slow 22s linear infinite' }} />
