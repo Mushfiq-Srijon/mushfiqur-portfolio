@@ -15,15 +15,23 @@ export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
 
     useEffect(() => {
+        const sectionMap = [
+            { selector: '#about', activates: '#about' },
+            { selector: '#education', activates: '#about' },
+            { selector: '#skills', activates: '#skills' },
+            { selector: '#projects', activates: '#projects' },
+            { selector: '#contact', activates: '#contact' },
+        ];
+
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
-            const sections = navLinks.map(l => document.querySelector(l.href));
-            const current = sections.findIndex(el => {
+            const current = sectionMap.find(({ selector }) => {
+                const el = document.querySelector(selector);
                 if (!el) return false;
                 const rect = el.getBoundingClientRect();
                 return rect.top <= 120 && rect.bottom >= 120;
             });
-            setActive(current >= 0 ? navLinks[current].href : '');
+            setActive(current ? current.activates : '');
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
@@ -31,12 +39,18 @@ export default function Navbar() {
 
     return (
         <header className={`sticky top-0 z-50 transition-all duration-300 border-b ${scrolled ? 'backdrop-blur-md bg-canvas/80 border-circuit/10' : 'bg-transparent border-transparent'}`}>
-            <nav className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+            <nav className="max-w-345 mx-auto px-6 h-16 flex items-center justify-between">
                 <a href="#" className="font-mono text-sm text-circuit">&lt;Mushfiqur /&gt;</a>
 
                 <div className="hidden md:flex items-center gap-8">
                     {navLinks.map((link) => (
-                        <a key={link.href} href={link.href} className={`font-mono text-sm transition-colors ${active === link.href ? 'text-circuit' : 'text-muted hover:text-circuit'}`}>
+                        <a key={link.href}
+                            href={link.href}
+                            className={`inline-block font-mono text-sm transition-all duration-300 origin-center ${active === link.href
+                                ? 'text-circuit font-semibold scale-110'
+                                : 'text-muted hover:text-circuit scale-100'
+                                }`}
+                        >
                             {link.label}
                         </a>
                     ))}

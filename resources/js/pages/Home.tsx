@@ -9,6 +9,7 @@ import Skills from '@/Components/Skills';
 import Projects from '@/Components/Projects';
 import Contact from '@/Components/Contact';
 import Footer from '@/Components/Footer';
+import Education from '@/Components/Education';
 
 export default function Home() {
     return (
@@ -16,7 +17,7 @@ export default function Home() {
             <Navbar />
             <CircuitBackground />
 
-            <section className="relative max-w-5xl mx-auto px-6 pt-24 pb-24">
+            <section className="relative max-w-345 mx-auto px-6 lg:px-12 pt-24 pb-24">
                 <div className="flex flex-col md:flex-row items-center justify-between gap-16">
 
                     <motion.div
@@ -25,10 +26,9 @@ export default function Home() {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.7, ease: 'easeOut' }}
                     >
-                        <p className="font-mono text-sm text-circuit mb-3">$ whoami</p>
 
                         <h1 className="font-display text-5xl md:text-6xl font-bold text-ink leading-tight">
-                            Mushfiqur<br />Rahman
+                            MD.Mushfiqur<br />Rahman
                         </h1>
 
                         <p className="text-muted text-base mt-4 max-w-md leading-relaxed">
@@ -66,6 +66,7 @@ export default function Home() {
                 </div>
             </section>
             <About />
+            <Education />
             <Skills />
             <Projects />
             <Contact />
