@@ -15,6 +15,7 @@ return [
     */
 
     'default' => env('MAIL_MAILER', 'log'),
+    'contact_recipient' => env('MAIL_TO_ADDRESS'),
 
     /*
     |--------------------------------------------------------------------------
@@ -96,6 +97,7 @@ return [
             ],
             'retry_after' => 60,
         ],
+        
 
     ],
 
