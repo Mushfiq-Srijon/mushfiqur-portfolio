@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Download } from 'lucide-react';
 import CircuitBackground from '@/Components/CircuitBackground';
 import Navbar from '@/Components/Navbar';
 import HeroPhoto from '@/Components/HeroPhoto';
@@ -35,12 +35,20 @@ export default function Home() {
                             Full-Stack Web Developer · 3rd year CSE student at AUST · Building real-world apps with Laravel, React &amp; TypeScript.
                         </p>
 
-                        <div className="flex items-center gap-3 mt-8">
+                        <div className="flex items-center flex-wrap gap-3 mt-8">
                             <a href="#projects" className="px-5 py-2.5 rounded-lg bg-circuit text-white font-medium text-sm hover:bg-circuit/90 transition-colors flex items-center gap-2">
                                 View Projects <ArrowRight size={15} />
                             </a>
                             <a href="#contact" className="px-5 py-2.5 rounded-lg border border-circuit/30 text-ink font-medium text-sm hover:border-circuit transition-colors">
                                 Contact Me
+                            </a>
+
+                            <a href="/resume/resume.pdf"
+                                download
+                                className="px-5 py-2.5 rounded-lg font-medium text-sm flex items-center gap-2 transition-all duration-200 hover:scale-105"
+                                style={{ background: 'rgba(37,99,235,0.06)', border: '1.5px solid rgba(37,99,235,0.25)', color: '#2563eb' }}
+                            >
+                                <Download size={15} /> Resume
                             </a>
                         </div>
 
@@ -64,13 +72,13 @@ export default function Home() {
                     </motion.div>
 
                 </div>
-            </section>
+            </section >
             <About />
             <Education />
             <Skills />
             <Projects />
             <Contact />
             <Footer />
-        </div>
+        </div >
     );
 }

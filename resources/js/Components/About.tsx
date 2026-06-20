@@ -18,9 +18,7 @@ export default function About() {
                     <p>
                         I'm <span className="text-ink font-semibold">Mushfiqur Rahman</span>, a full-stack web developer currently in my third year of a BSc in Computer Science & Engineering. I build web applications end to end — from database schema to the last bit of UI polish — and I enjoy the part where a messy real-world problem turns into something people can actually click through and use.
                     </p>
-                    <p>
-                        Most of what I build starts from a genuine need rather than a tutorial idea. A pharmacy ordering platform so people don't have to call five shops to find one medicine. A football data hub built for the scale of an actual World Cup. An expense tracker simple enough that I'd use it myself. That's the thread running through my work — practical first, polished second.
-                    </p>
+                    
                     <p>
                         My primary stack is <span className="text-ink font-medium">Laravel, PHP, React, TypeScript, and MySQL</span> — I reach for this combination by default because it lets me move fast on both the backend and the interface without switching mental models. I've also built with the <span className="text-ink font-medium">MERN stack</span>, and I like staying comfortable on both sides of the JavaScript/PHP divide rather than locking into one ecosystem.
                     </p>
