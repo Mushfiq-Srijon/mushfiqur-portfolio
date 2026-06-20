@@ -18,7 +18,7 @@ export default function About() {
                     <p>
                         I'm <span className="text-ink font-semibold">Mushfiqur Rahman</span>, a full-stack web developer currently in my third year of a BSc in Computer Science & Engineering. I build web applications end to end — from database schema to the last bit of UI polish — and I enjoy the part where a messy real-world problem turns into something people can actually click through and use.
                     </p>
-                    
+
                     <p>
                         My primary stack is <span className="text-ink font-medium">Laravel, PHP, React, TypeScript, and MySQL</span> — I reach for this combination by default because it lets me move fast on both the backend and the interface without switching mental models. I've also built with the <span className="text-ink font-medium">MERN stack</span>, and I like staying comfortable on both sides of the JavaScript/PHP divide rather than locking into one ecosystem.
                     </p>
@@ -26,16 +26,6 @@ export default function About() {
                         Outside of coursework, I'm usually shipping something solo or pairing up for a team build. I'm currently open to internship opportunities, freelance work, and collaborations where I can learn from people better than me.
                     </p>
 
-                    <div className="flex flex-wrap gap-3 pt-2">
-                        <a href="https://github.com/Mushfiq-Srijon" target="_blank" rel="noreferrer"
-                            className="px-4 py-2 rounded-xl font-mono text-xs font-medium text-circuit border border-circuit/30 bg-circuit/5 hover:bg-circuit/15 hover:border-circuit/60 transition-all duration-200">
-                            ↗ github.com/Mushfiq-Srijon
-                        </a>
-                        <a href="https://www.linkedin.com/in/mushfiq011" target="_blank" rel="noreferrer"
-                            className="px-4 py-2 rounded-xl font-mono text-xs font-medium text-glow border border-glow/30 bg-glow/5 hover:bg-glow/15 hover:border-glow/60 transition-all duration-200">
-                            ↗ linkedin/mushfiq011
-                        </a>
-                    </div>
                 </motion.div>
 
                 <motion.div className="w-full lg:w-60 grid grid-cols-2 gap-4 flex-shrink-0" variants={slideRightVariants}>

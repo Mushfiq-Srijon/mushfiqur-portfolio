@@ -3,7 +3,6 @@ import { ArrowRight, Download } from 'lucide-react';
 import CircuitBackground from '@/Components/CircuitBackground';
 import Navbar from '@/Components/Navbar';
 import HeroPhoto from '@/Components/HeroPhoto';
-import { GithubIcon, LinkedinIcon } from '@/Components/Icons';
 import About from '@/Components/About';
 import Skills from '@/Components/Skills';
 import Projects from '@/Components/Projects';
@@ -52,14 +51,6 @@ export default function Home() {
                             </a>
                         </div>
 
-                        <div className="flex items-center gap-5 mt-7">
-                            <a href="https://github.com/Mushfiq-Srijon" target="_blank" rel="noreferrer" className="text-muted hover:text-circuit transition-colors">
-                                <GithubIcon size={22} />
-                            </a>
-                            <a href="https://www.linkedin.com/in/mushfiq011" target="_blank" rel="noreferrer" className="text-muted hover:text-circuit transition-colors">
-                                <LinkedinIcon size={22} />
-                            </a>
-                        </div>
                     </motion.div>
 
                     <motion.div
