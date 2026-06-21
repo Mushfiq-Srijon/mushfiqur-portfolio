@@ -2,11 +2,11 @@ import { Phone, Briefcase, Mail, MapPin, Calendar } from 'lucide-react';
 import InfoBadge from './InfoBadge';
 
 const badges = [
-    { icon: Briefcase, label: 'Full-Stack Dev', style: { top: '4%', right: 'calc(100% + 120px)', animationDelay: '0s' } },
+    { icon: Briefcase, label: 'Full-Stack Developer', style: { top: '4%', right: 'calc(100% + 120px)', animationDelay: '0s' } },
     { icon: Phone, label: '+8801627409372', style: { top: '42%', right: 'calc(100% + 140px)', animationDelay: '0.6s' } },
-    { icon: Mail, label: 'mushfiq.srijon@email.com', style: { bottom: '6%', right: 'calc(100% + 120px)', animationDelay: '1.2s' } },
-    { icon: MapPin, label: 'Dhaka, BD', style: { top: '14%', left: 'calc(100% + 10px)', animationDelay: '0.3s' } },
-    { icon: Calendar, label: '3+ Yrs Coding', style: { bottom: '14%', left: 'calc(100% + 10px)', animationDelay: '0.9s' } },
+    { icon: Mail, label: 'mushfiq.srijon@gmail.com', style: { bottom: '6%', right: 'calc(100% + 120px)', animationDelay: '1.2s' } },
+    { icon: MapPin, label: 'Dhaka,Bangladesh', style: { top: '14%', left: 'calc(100% + 10px)', animationDelay: '0.3s' } },
+    { icon: Calendar, label: '1+ years experience', style: { bottom: '14%', left: 'calc(100% + 10px)', animationDelay: '0.9s' } },
 ];
 
 export default function HeroPhoto() {
