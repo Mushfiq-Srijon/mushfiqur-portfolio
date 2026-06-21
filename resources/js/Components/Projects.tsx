@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, Fragment } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Image as ImageIcon, X, ZoomIn } from 'lucide-react';
 import SectionWrapper, { fadeUpVariants } from './SectionWrapper';
@@ -67,6 +67,16 @@ function ProjectImage({
     );
 }
 
+function ProjectDivider({ from, to }: { from: string; to: string }) {
+    return (
+        <div className="flex items-center gap-3 px-2">
+            <div className="flex-1 h-px" style={{ background: `linear-gradient(90deg, transparent, ${from}50)` }} />
+            <div className="w-2.5 h-2.5 rounded-full rotate-45 flex-shrink-0" style={{ background: `linear-gradient(135deg, ${from}, ${to})` }} />
+            <div className="flex-1 h-px" style={{ background: `linear-gradient(90deg, ${to}50, transparent)` }} />
+        </div>
+    );
+}
+
 export default function Projects() {
     const [lightbox, setLightbox] = useState<string | null>(null);
 
@@ -76,85 +86,90 @@ export default function Projects() {
 
             <div className="flex flex-col gap-16">
                 {projects.map((project, i) => {
-                    const reversed = i % 2 === 1;
+                    const reversed = i % 2 === 0;
                     return (
-                        <motion.div
-                            key={project.name}
-                            variants={fadeUpVariants}
-                            className={`flex flex-col gap-8 ${reversed ? 'md:flex-row-reverse' : 'md:flex-row'} items-center`}
-                        >
-                            {/* Photo stack: big on top, two small underneath */}
-                            <div className="w-full md:w-1/2 flex flex-col gap-3">
-                                <ProjectImage
-                                    src={project.images[0]}
-                                    alt={`${project.name} main screenshot`}
-                                    from={project.from} to={project.to}
-                                    className="rounded-2xl w-full h-56 md:h-64 border border-circuit/10"
-                                    onOpen={setLightbox}
-                                />
-                                <div className="grid grid-cols-2 gap-3">
-                                    <ProjectImage
-                                        src={project.images[1]}
-                                        alt={`${project.name} screenshot 2`}
-                                        from={project.from} to={project.to}
-                                        className="rounded-xl w-full h-28 border border-circuit/10"
-                                        onOpen={setLightbox}
-                                    />
-                                    <ProjectImage
-                                        src={project.images[2]}
-                                        alt={`${project.name} screenshot 3`}
-                                        from={project.from} to={project.to}
-                                        className="rounded-xl w-full h-28 border border-circuit/10"
-                                        onOpen={setLightbox}
-                                    />
-                                </div>
-                            </div>
-
-                            {/* Content */}
-                            <div className="w-full md:w-1/2 bg-white rounded-2xl p-7 border border-circuit/10" style={{ boxShadow: `0 6px 28px ${project.from}10` }}>
-                                <div className="flex items-center gap-3 mb-4">
-                                    <span className="font-mono text-xs font-bold px-3 py-1 rounded-full" style={{ background: `${project.from}12`, color: project.from }}>
-                                        {project.type}
-                                    </span>
-                                    <span className="font-mono text-xs text-muted/80">{project.num}</span>
-                                </div>
-
-                                <h3 className="font-display text-2xl font-bold mb-3" style={{ background: `linear-gradient(135deg, ${project.from}, ${project.to})`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                                    {project.name}
-                                </h3>
-
-                                <p className="text-muted text-sm leading-relaxed mb-5">{project.description}</p>
-
-                                <ul className="space-y-2 mb-5">
-                                    {project.features.map((f) => (
-                                        <li key={f} className="flex items-center gap-2 text-sm text-muted">
-                                            <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: project.from }} />
-                                            {f}
-                                        </li>
-                                    ))}
-                                </ul>
-
-                                <div className="flex flex-wrap gap-2 mb-6">
-                                    {project.stack.map((tech) => (
-                                        <span key={tech} className="px-3 py-1 rounded-full font-mono text-xs" style={{ background: `${project.from}10`, color: project.from }}>
-                                            {tech}
+                        <Fragment key={project.name}>
+                            <motion.div
+                                variants={fadeUpVariants}
+                                className={`flex flex-col gap-8 ${reversed ? 'md:flex-row-reverse' : 'md:flex-row'} items-center`}
+                            >
+                                {/* Content */}
+                                <div className="w-full md:w-1/2 bg-white rounded-2xl p-7 border border-circuit/10" style={{ boxShadow: `0 6px 28px ${project.from}10` }}>
+                                    <div className="flex items-center gap-3 mb-4">
+                                        <span className="font-mono text-xs font-bold px-3 py-1 rounded-full" style={{ background: `${project.from}12`, color: project.from }}>
+                                            {project.type}
                                         </span>
-                                    ))}
+                                        <span className="font-mono text-xs text-muted/80">{project.num}</span>
+                                    </div>
+
+                                    <h3 className="font-display text-2xl font-bold mb-3" style={{ background: `linear-gradient(135deg, ${project.from}, ${project.to})`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                                        {project.name}
+                                    </h3>
+
+                                    <p className="text-muted text-sm leading-relaxed mb-5">{project.description}</p>
+
+                                    <ul className="space-y-2 mb-5">
+                                        {project.features.map((f) => (
+                                            <li key={f} className="flex items-center gap-2 text-sm text-muted">
+                                                <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: project.from }} />
+                                                {f}
+                                            </li>
+                                        ))}
+                                    </ul>
+
+                                    <div className="flex flex-wrap gap-2 mb-6">
+                                        {project.stack.map((tech) => (
+                                            <span key={tech} className="px-3 py-1 rounded-full font-mono text-xs" style={{ background: `${project.from}10`, color: project.from }}>
+                                                {tech}
+                                            </span>
+                                        ))}
+                                    </div>
+
+                                    <div className="flex items-center gap-3">
+                                        <a href={project.live} target="_blank" rel="noreferrer" className="px-5 py-2.5 rounded-xl text-white font-medium text-sm transition-all duration-200 hover:opacity-90 hover:scale-105" style={{ background: `linear-gradient(135deg, ${project.from}, ${project.to})` }}>
+                                            Live Demo ↗
+                                        </a>
+                                        {project.github && (
+                                            <a href={project.github} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm bg-canvas text-ink border border-circuit/15 hover:border-circuit/30 transition-all duration-200 hover:scale-105">
+                                                <GithubIcon size={15} />
+                                                Source
+                                            </a>
+                                        )}
+                                    </div>
                                 </div>
 
-                                <div className="flex items-center gap-3">
-                                    <a href={project.live} target="_blank" rel="noreferrer" className="px-5 py-2.5 rounded-xl text-white font-medium text-sm transition-all duration-200 hover:opacity-90 hover:scale-105" style={{ background: `linear-gradient(135deg, ${project.from}, ${project.to})` }}>
-                                        Live Demo ↗
-                                    </a>
-                                    {project.github && (
-                                        <a href={project.github} target="_blank" rel="noreferrer" className="flex items-center gap-2 px-5 py-2.5 rounded-xl font-medium text-sm bg-canvas text-ink border border-circuit/15 hover:border-circuit/30 transition-all duration-200 hover:scale-105">
-                                            <GithubIcon size={15} />
-                                            Source
-                                        </a>
-                                    )}
+                                {/* Photo stack: big on top, two small underneath */}
+                                <div className="w-full md:w-1/2 flex flex-col gap-3">
+                                    <ProjectImage
+                                        src={project.images[0]}
+                                        alt={`${project.name} main screenshot`}
+                                        from={project.from} to={project.to}
+                                        className="rounded-2xl w-full h-56 md:h-64 border border-circuit/10"
+                                        onOpen={setLightbox}
+                                    />
+                                    <div className="grid grid-cols-2 gap-3">
+                                        <ProjectImage
+                                            src={project.images[1]}
+                                            alt={`${project.name} screenshot 2`}
+                                            from={project.from} to={project.to}
+                                            className="rounded-xl w-full h-28 border border-circuit/10"
+                                            onOpen={setLightbox}
+                                        />
+                                        <ProjectImage
+                                            src={project.images[2]}
+                                            alt={`${project.name} screenshot 3`}
+                                            from={project.from} to={project.to}
+                                            className="rounded-xl w-full h-28 border border-circuit/10"
+                                            onOpen={setLightbox}
+                                        />
+                                    </div>
                                 </div>
-                            </div>
-                        </motion.div>
+                            </motion.div>
+
+                            {i < projects.length - 1 && (
+                                <ProjectDivider from={project.to} to={projects[i + 1].from} />
+                            )}
+                        </Fragment>
                     );
                 })}
             </div>

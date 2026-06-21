@@ -22,6 +22,10 @@
     --color-violet:   #7c3aed;
 }
 
+html, body {
+    overflow-x: hidden;
+}
+
 html { scroll-behavior: smooth; }
 
 body {

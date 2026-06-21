@@ -16,8 +16,8 @@ export default function Home() {
             <Navbar />
             <CircuitBackground />
 
-            <section className="relative max-w-345 mx-auto px-6 lg:px-12 pt-24 pb-24">
-                <div className="flex flex-col md:flex-row items-center justify-between gap-16">
+            <section className="relative max-w-[1380px] mx-auto px-6 lg:px-12 pt-16 md:pt-24 pb-16 md:pb-24">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16">
 
                     <motion.div
                         className="flex-1 text-left"

@@ -69,7 +69,7 @@ export default function SectionWrapper({ id, children, className = '' }: Props) 
     return (
         <motion.section
             id={id}
-            className={`relative max-w-345 mx-auto px-6 lg:px-12 py-24 ${className}`}
+            className={`relative max-w-345 mx-auto px-6 lg:px-12 py-16 md:py-24 ${className}`}
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
