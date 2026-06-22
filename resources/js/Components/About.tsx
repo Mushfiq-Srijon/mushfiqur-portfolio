@@ -16,14 +16,14 @@ export default function About() {
             <div className="flex flex-col lg:flex-row gap-12 items-start">
                 <motion.div className="flex-1 space-y-5 text-muted leading-relaxed text-[15px]" variants={slideLeftVariants}>
                     <p>
-                        I'm <span className="text-ink font-semibold">Mushfiqur Rahman</span>, a full-stack web developer currently in my third year of a BSc in Computer Science & Engineering. I build web applications end to end — from database schema to the last bit of UI polish — and I enjoy the part where a messy real-world problem turns into something people can actually click through and use.
+                        I'm <span className="text-ink font-semibold">Mushfiqur Rahman</span>, a full-stack web developer and third-year Computer Science & Engineering student. I enjoy building web applications from backend to frontend and turning real-world problems into simple, usable products.
                     </p>
 
                     <p>
-                        My primary stack is <span className="text-ink font-medium">Laravel, PHP, React, TypeScript, and MySQL</span> — I reach for this combination by default because it lets me move fast on both the backend and the interface without switching mental models. I've also built with the <span className="text-ink font-medium">MERN stack</span>, and I like staying comfortable on both sides of the JavaScript/PHP divide rather than locking into one ecosystem.
+                        My primary stack is <span className="text-ink font-medium">Laravel, PHP, React, TypeScript, and MySQL</span>  which I use to build projects quickly and efficiently. I’ve also worked with the MERN stack, so I’m comfortable across both PHP and JavaScript ecosystems.
                     </p>
                     <p>
-                        Outside of coursework, I'm usually shipping something solo or pairing up for a team build. I'm currently open to internship opportunities, freelance work, and collaborations where I can learn from people better than me.
+                       I’m currently open to internships, freelance work, and collaborations where I can learn and grow as a developer.
                     </p>
 
                 </motion.div>
