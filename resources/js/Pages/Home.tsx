@@ -42,7 +42,7 @@ export default function Home() {
                                 Contact Me
                             </a>
 
-                            <a href="/resume/resume.pdf"
+                            <a href="/resume/Md.Mushfiqur Rahman.pdf"
                                 download
                                 className="px-5 py-2.5 rounded-lg font-medium text-sm flex items-center gap-2 transition-all duration-200 hover:scale-105"
                                 style={{ background: 'rgba(37,99,235,0.06)', border: '1.5px solid rgba(37,99,235,0.25)', color: '#2563eb' }}
